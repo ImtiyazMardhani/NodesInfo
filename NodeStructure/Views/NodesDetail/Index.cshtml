@@ -1,0 +1,22 @@
+﻿@model IEnumerable<NodeStructure.Models.NodesList>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Nodes Structure</h1>
+
+<ul>
+    @foreach (var node in Model)
+    {
+        <li>
+            <span>@node.nodeName</span>
+            <ul>
+                @foreach (var subNode in node.childnodes)
+                {
+                    <li>@subNode.nodeName</li>
+                }
+            </ul>
+        </li>
+    }
+</ul>
